@@ -2,7 +2,7 @@ let inputArr = [];
 let resultArr = [];
 var prevInput = 0;
 var op = '';
-
+var zeroFlag = 0;
 function calcLogicHandler(key, type) {
   let noInputFlag = 0;
   if (type === 'ac') {
@@ -17,30 +17,38 @@ function calcLogicHandler(key, type) {
         : 0;
     }
   } else if (type === 'op') {
-    let inputInt = parseFloat(inputArr.join('')).toPrecision(3);
+    let inputInt = parseFloat(inputArr.join(''));
+
     if (!prevInput) {
       //No prev input
-      if (inputArr.length && inputInt != 0) {
+      if (inputArr.length && !zeroFlag) {
         //Valid current user input ------ Ex:  10 *
         prevInput = inputInt;
         inputArr.length = 0;
       } else {
-        noInputFlag = 1;
+        prevInput = calcOperationHandler(0, inputInt, op);
+        inputArr.length = 0;
+        prevInput ? (zeroFlag = 1) : null;
       }
     } else {
       //Valid previous input
+
       if (inputArr.length) {
         //Valid current user input ------ Ex:  10 * 10 *
         prevInput = calcOperationHandler(prevInput, inputInt, op);
+        !prevInput ? (zeroFlag = 1) : null;
         inputArr.length = 0;
       }
     }
     if (
       prevInput < 1 * Math.pow(10, 20) &&
-      prevInput >= 1 * Math.pow(10, -20) &&
+      (prevInput > 1 * Math.pow(10, -20) ||
+        prevInput < -1 * Math.pow(10, -20) ||
+        prevInput === 0) &&
       !noInputFlag
     ) {
       op = key;
+
       bottomScreen.textContent = '';
       if (prevInput.toString().length >= 8) {
         topScreen.textContent =
@@ -75,19 +83,19 @@ function calcLogicHandler(key, type) {
       if (
         tmp !== 'Infinity' &&
         tmpFloat < 1 * Math.pow(10, 20) &&
-        tmpFloat > 1 * Math.pow(10, -20)
+        (tmpFloat <= 1 * Math.pow(10, -20) ||
+          tmpFloat >= -1 * Math.pow(10, -20))
       ) {
         inputArr = tmp.split('');
         if (tmp.length < 8) {
           bottomScreen.textContent = parseFloat(
             inputArr.join('')
-          ).toPrecision(2);
+          ).toFixed(2);
         } else {
           bottomScreen.textContent = parseFloat(
             inputArr.join('')
           ).toExponential(3);
         }
-        console.log(inputArr);
       } else if (
         tmpFloat >= 1 * Math.pow(10, 20) ||
         (tmpFloat <= 1 * Math.pow(10, -20) &&
