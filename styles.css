@@ -41,23 +41,36 @@ body {
   flex-direction: column;
 
   border-radius: 4px;
+
+  min-height: fit-content;
 }
 
-.screen {
-  width: 402px;
-  height: 150px;
+.screen-container {
+  width: 420px;
+  height: 160px;
   margin-top: 35px;
   margin-bottom: 15px;
   padding-right: 20px;
 
   text-align: right;
-  line-height: 200px;
-  font-size: 3.3em;
+  font-size: 3.3rem;
 
   border: 2px solid black;
   border-radius: 4px;
 
   background-color: rgba(241, 241, 241, 0.418);
+}
+
+.top-screen {
+  height: 60px;
+  text-align: right;
+  line-height: 60px;
+  font-size: 2rem;
+}
+.bottom-screen {
+  height: 100px;
+  text-align: right;
+  line-height: 100px;
 }
 
 .buttons {
@@ -74,7 +87,7 @@ body {
 
 .normal-btn {
   height: 74px;
-  width: 84px;
+  width: 95px;
   display: block;
 
   margin-top: -40px;
@@ -100,7 +113,7 @@ body {
 
 .ac,
 .del {
-  width: 190px;
+  width: 210px;
 
   margin-top: -2px;
 }
