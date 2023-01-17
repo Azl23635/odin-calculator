@@ -12,7 +12,7 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <div class="heading">Calculator</div>
+    <div class="heading">Basic Calculator</div>
     <div class="main">
       <div class="calc">
         <div class="screen-container">
@@ -25,20 +25,34 @@
           <div class="seven normal-btn" id="7">7</div>
           <div class="eight normal-btn" id="8">8</div>
           <div class="nine normal-btn" id="9">9</div>
-          <div class="divide normal-btn" id="/">÷</div>
+          <div class="divide normal-btn operation" id="/">÷</div>
           <div class="four normal-btn" id="4">4</div>
           <div class="five normal-btn" id="5">5</div>
           <div class="six normal-btn" id="6">6</div>
-          <div class="multiply normal-btn" id="*">×</div>
+          <div class="multiply normal-btn operation" id="*">×</div>
           <div class="one normal-btn" id="1">1</div>
           <div class="two normal-btn" id="2">2</div>
           <div class="three normal-btn" id="3">3</div>
-          <div class="subtract normal-btn" id="-">−</div>
+          <div class="subtract normal-btn operation" id="-">−</div>
           <div class="dot normal-btn" id=".">.</div>
           <div class="zero normal-btn" id="0">0</div>
           <div class="equals normal-btn" id="=">=</div>
-          <div class="add normal-btn" id="+">+</div>
+          <div class="add normal-btn operation" id="+">+</div>
         </div>
+      </div>
+      <div class="limitations">
+        <h3>Limitations</h4>
+        <p>Decimal inputs disabled</p>
+        <ul class="after-ac">
+          After AC or Equals:
+          <li>
+            Zero by itself cannot be the first argument ('0 - 1' or '0
+            + 1')
+          </li>
+          <li>
+            An operation cannot be the first argument ('+ 1' or '- 1')
+          </li>
+        </ul>
       </div>
     </div>
     <div class="footer">Copyright ©</div>

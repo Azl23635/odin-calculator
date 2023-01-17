@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani&family=Comfortaa:wght@500&display=swap');
 body {
   height: 100vh;
   width: 100vw;
@@ -6,7 +6,7 @@ body {
   padding: 0;
   overflow: hidden;
 
-  background-color: beige;
+  background-color: rgb(228, 214, 176);
   font-family: sans-serif;
   color: black;
 
@@ -17,18 +17,20 @@ body {
 }
 
 .heading {
-  margin-top: 16px;
-  font-size: 3em;
+  margin-top: 30px;
+  margin-bottom: -20px;
+  font-size: 3.6rem;
   font-family: 'Comfortaa', cursive;
 }
 
 .main {
-  width: 900px;
+  width: 1020px;
   height: 900px;
 
   display: flex;
   align-items: center;
-  justify-content: center;
+
+  font-family: 'Rajdhani', sans-serif;
 }
 
 .calc {
@@ -39,8 +41,10 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
+  flex: 0 0 auto;
+  margin-left: 260px;
 
-  border-radius: 4px;
+  border-radius: 6px;
 
   min-height: fit-content;
 }
@@ -56,7 +60,7 @@ body {
   font-size: 3.3rem;
 
   border: 2px solid black;
-  border-radius: 4px;
+  border-radius: 6px;
 
   background-color: rgba(241, 241, 241, 0.418);
 }
@@ -93,19 +97,19 @@ body {
   margin-top: -40px;
 
   border: 2px solid black;
-  border-radius: 4px;
+  border-radius: 6px;
 
   text-align: center;
   line-height: 74px;
-  font-size: 1.4em;
+  font-size: 1.6em;
 
-  background-color: rgba(241, 241, 241, 0.418);
+  background-color: rgba(253, 252, 252, 0.418);
 
   cursor: pointer;
 }
 
 .normal-btn:hover {
-  background-color: rgba(170, 170, 170, 0.418);
+  background-color: rgba(194, 193, 193, 0.418);
 }
 .normal-btn:active {
   transform: scale(0.98);
@@ -116,6 +120,10 @@ body {
   width: 210px;
 
   margin-top: -2px;
+}
+
+.dot {
+  pointer-events: none;
 }
 
 .ac {
@@ -132,11 +140,38 @@ body {
   background-color: rgba(192, 41, 41, 0.555);
 }
 
+.operation,
+.equals {
+  background-color: rgba(253, 243, 97, 0.555);
+}
+.operation:hover,
+.equals:hover {
+  background-color: rgba(158, 152, 63, 0.555);
+}
+
+.limitations {
+  margin-top: 300px;
+  margin-left: 10px;
+  padding-left: 10px;
+  height: 200px;
+  width: 240px;
+  max-width: 240px;
+  display: inline-block;
+  justify-self: flex-end;
+}
+.after-ac > li {
+  margin-left: 24px;
+  padding-top: 8px;
+}
+ul {
+  padding-left: 4px;
+}
+
 .footer {
   width: 100%;
   height: 30px;
   padding-top: 15px;
 
   text-align: center;
-  background-color: rgba(245, 245, 173, 0.39);
+  background-color: rgba(206, 194, 160, 0.308);
 }
